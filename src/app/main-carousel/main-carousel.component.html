@@ -3,44 +3,18 @@
 >
     <swiper [config]="config" class="mySwiper">
         <ng-template swiperSlide>
+          <a href="https://www.noon.com/egypt-ar/">
             <div class="slide-container">
-                <img src="assets/main carousel/1.gif" alt="" />
+              <img src="assets/main carousel/1.gif" alt="" />
             </div>
-        </ng-template>
-        <ng-template swiperSlide>
+          </a>
+          </ng-template>
+        <ng-template *ngFor="let file of fileList" swiperSlide>
+          <a href="https://www.noon.com/egypt-ar/">
             <div class="slide-container">
-                <img src="assets/main carousel/2.jpeg" alt="" />
-            </div>
-        </ng-template>
-        <ng-template swiperSlide>
-            <div class="slide-container">
-                <img src="assets/main carousel/3.jpeg" alt="" />
-            </div>
-        </ng-template>
-        <ng-template swiperSlide>
-            <div class="slide-container">
-                <img src="assets/main carousel/4.jpeg" alt="" />
-            </div>
-        </ng-template>
-        <ng-template swiperSlide>
-            <div class="slide-container">
-                <img src="assets/main carousel/5.jpeg" alt="" />
-            </div>
-        </ng-template>
-        <ng-template swiperSlide>
-            <div class="slide-container">
-                <img src="assets/main carousel/6.jpeg" alt="" />
-            </div>
-        </ng-template>
-        <ng-template swiperSlide>
-            <div class="slide-container">
-                <img src="assets/main carousel/7.jpeg" alt="" />
-            </div>
-        </ng-template>
-        <ng-template swiperSlide>
-            <div class="slide-container">
-                <img src="assets/main carousel/8.jpeg" alt="" />
-            </div>
+                <img src="{{file}}" alt="" />
+              </div>
+            </a>
         </ng-template>
     </swiper>
 </div>
