@@ -10,8 +10,9 @@ module.exports = {
       "2xl": "1536px",
     },
     colors: {
-      yellow: "#fef253",
+      yellow: "#feee00",
       background_color: "#f7f7fa",
+      white: "#ffffff"
 
     },
     fontFamily: {
