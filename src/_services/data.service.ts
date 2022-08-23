@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,10 +8,9 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  header: HttpHeaders =  new HttpHeaders({'lang': 'en'});
+  body = {"googleId" : "ChIJ88rv8bI_WBQRkvVBLDeZQUg"}
   getMainMenu(url: string) {
-    return this.http.post(url,{
-      "googleId" : "ChIJ88rv8bI_WBQRkvVBLDeZQUg"
-      },
-      {headers:{"lang": "en"}})
-  }
+    return this.http.post(url,this.body,{headers: this.header});
+    }
 }
