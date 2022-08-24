@@ -8,9 +8,9 @@ import { SwiperService } from 'src/_services/swiper.service';
 })
 export class MainCarouselComponent implements OnInit {
     constructor(private swiper: SwiperService) {
-      for (let i = 2; i < 9; i++){
-        this.fileList.push(`assets/main carousel/${i}.jpeg`);
-      }
+        for (let i = 2; i < 9; i++) {
+            this.fileList.push(`assets/main carousel/${i}.jpeg`);
+        }
     }
     fileList: string[] = [];
     config = this.swiper.config;

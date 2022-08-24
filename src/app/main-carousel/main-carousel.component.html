@@ -3,17 +3,17 @@
 >
     <swiper [config]="config" class="mySwiper">
         <ng-template swiperSlide>
-          <a href="https://www.noon.com/egypt-ar/">
-            <div class="slide-container">
-              <img src="assets/main carousel/1.gif" alt="" />
-            </div>
-          </a>
-          </ng-template>
+            <a href="https://www.noon.com/egypt-ar/">
+                <div class="slide-container">
+                    <img src="assets/main carousel/1.gif" alt="" />
+                </div>
+            </a>
+        </ng-template>
         <ng-template *ngFor="let file of fileList" swiperSlide>
-          <a href="https://www.noon.com/egypt-ar/">
-            <div class="slide-container">
-                <img src="{{file}}" alt="" />
-              </div>
+            <a href="https://www.noon.com/egypt-ar/">
+                <div class="slide-container">
+                    <img src="{{ file }}" alt="" />
+                </div>
             </a>
         </ng-template>
     </swiper>
