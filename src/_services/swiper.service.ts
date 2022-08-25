@@ -26,10 +26,9 @@ export class SwiperService {
             disableOnInteraction: true,
             reverseDirection: true,
         },
-        
+
     };
     config2: SwiperOptions = {
-      loop:false,
       navigation: true,
       scrollbar: { draggable: true },
       loopFillGroupWithBlank:false,
@@ -51,12 +50,12 @@ export class SwiperService {
           slidesPerView:4,
           spaceBetween:7,
           slidesPerGroup:4,
-        }, 
+        },
         790: {
           slidesPerView:5,
           spaceBetween:10,
           slidesPerGroup:5,
-        }, 
+        },
         1120: {
           slidesPerView:7,
           spaceBetween:10,
@@ -69,5 +68,72 @@ export class SwiperService {
         }
       }
     };
-    ngOnInit(): void {}
+
+    config3: SwiperOptions = {
+      navigation: true,
+      scrollbar: { draggable: true },
+      breakpoints: {
+      350: {
+        slidesPerView:2,
+        spaceBetween:0,
+        slidesPerGroup:2,
+      },
+      460: {
+        slidesPerView:3,
+        spaceBetween:0,
+        slidesPerGroup:2,
+      },
+      640: {
+        slidesPerView:4,
+        spaceBetween:0,
+        slidesPerGroup:2,
+      },
+      790: {
+        slidesPerView:5,
+        spaceBetween:0,
+        slidesPerGroup:2,
+      },
+      1440: {
+        slidesPerView:10,
+        spaceBetween:0,
+        slidesPerGroup:2,
+      }
+    }
+  }
+  config4: SwiperOptions = {
+    navigation: true,
+    scrollbar: { draggable: true },
+    breakpoints: {
+    350: {
+      slidesPerView:2,
+      spaceBetween:0,
+      slidesPerGroup:2,
+    },
+    640: {
+      slidesPerView:3,
+      spaceBetween:0,
+      slidesPerGroup:2,
+    },
+    790: {
+      slidesPerView:4,
+      spaceBetween:0,
+      slidesPerGroup:2,
+    },
+    1000: {
+      slidesPerView:5,
+      spaceBetween:0,
+      slidesPerGroup:2,
+    },
+    1210: {
+      slidesPerView:6,
+      spaceBetween:0,
+      slidesPerGroup:2,
+    },
+    1440: {
+      slidesPerView:7,
+      spaceBetween:0,
+      slidesPerGroup:2,
+    }
+  }
+}
 }
