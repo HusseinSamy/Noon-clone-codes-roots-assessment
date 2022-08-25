@@ -1,13 +1,13 @@
 <div
     class="flex flex-row justify-center items-center w-screen max-h-max bg-yellow min-h-[65px] overflow-hidden p-2"
 >
-    <div class="flex justify-center w-full mx-6 lg:mx-10">
+    <div class="flex justify-center w-full mx-4 lg:mx-10">
         <div class="flex flex-col justify-center items-center w-full">
             <div class="lg:hidden flex justify-end items-center w-full mb-2">
                 <div
                     class="hidden md:flex lg:hidden justify-start items-center w-full"
                 >
-                    <p class="font-cairo text-xs font-bold mr-1">أفضل عروض</p>
+                    <p class="text-grey text-xs font-bold mr-1">أفضل عروض</p>
                     <svg
                         class="mr-3"
                         data-qa="icn_usp_best_deals"
@@ -44,7 +44,7 @@
                         ></path>
                     </svg>
 
-                    <p class="font-cairo text-xs font-bold mr-1">
+                    <p class="text-grey text-xs font-bold mr-1">
                         إرجاع مجاني بسهولة
                     </p>
                     <svg
@@ -97,12 +97,12 @@
 
                 <div class="flex min-w-max mr-6">
                     <div class="flex flex-col items-end mr-2">
-                        <p class="font-cairo text-sm font-medium">تسليم إلى</p>
-                        <p class="font-cairo text-sm font-bold">القاهرة</p>
+                        <p class="text-grey text-sm font-medium">تسليم إلى</p>
+                        <p class="text-grey text-sm font-bold">القاهرة</p>
                     </div>
                     <img class="w-[30px]" src="assets/others/eg.svg" alt="" />
                 </div>
-                <span class="font-medium text- text-sm font-cairo"
+                <span class="font-medium text- text-sm "
                     >English</span
                 >
             </div>
@@ -118,42 +118,63 @@
                     />
                 </div>
 
-                <div class="hidden lg:flex min-w-max mr-3">
+                <div class="hidden lg:flex min-w-max mr-3 hover:opacity-40 active:opacity-100 duration-300 cursor-pointer">
                     <div class="flex flex-col items-end mr-2">
-                        <p class="font-cairo text-md font-medium">تسليم إلى</p>
-                        <p class="font-cairo text-md font-bold">القاهرة</p>
+                        <p class="text-grey text-sm font-medium">تسليم إلى</p>
+                        <p class="text-grey text-sm font-bold">القاهرة</p>
                     </div>
-                    <img class="w-[30px]" src="assets/others/eg.svg" alt="" />
+                    <img class="w-[25px]" src="assets/others/eg.svg" alt="" />
                 </div>
                 <div
                     class="mx-6 lg:mx-8 flex flex-row-reverse items-center w-full overflow-hidden max-w-[1220px] min-w-[35px] p-2 rounded-md min-h-[8px] max-h-[36px] bg-white"
                 >
-                    <p class="font-cairo min-w-max font-light">
+                    <p class=" min-w-max font-normal text-grey text-opacity-60">
                         أنت بتدور على ايه؟
                     </p>
                 </div>
-                <span class="hidden lg:block font-medium text-sm font-cairo"
+                <span class="cursor-pointer hidden lg:block font-medium text-grey text-sm "
                     >English</span
                 >
                 <span class="hidden lg:block font-thin"> | </span>
-                <div class="flex justify-between min-w-max">
+                <div class="hover:opacity-40 active:opacity-100 duration-300 cursor-pointer flex justify-between min-w-max">
                     <img
-                        class="mr-1"
+                        class="max-w-[20px] mr-1"
                         src="assets/others/user_thin.svg"
                         alt=""
                     />
-                    <span class="font-cairo font-bold text-base"
+                    <span class=" font-bold text-grey text-sm"
                         >تسجيل الدخول</span
                     >
                 </div>
                 <span class="block font-thin"> | </span>
-                <div class="flex justify-between min-w-max">
-                    <img class="mr-1" src="assets/others/cart.svg" alt="" />
-                    <span class="font-cairo font-bold text-base"
+                <div class="hover:opacity-40 active:opacity-100 duration-300 cursor-pointer flex justify-between min-w-max">
+                    <img class="max-w-[20px] mr-1" src="assets/others/cart.svg" alt="" />
+                    <span class=" font-bold text-grey text-sm"
                         >عربة التسوق</span
                     >
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="w-screen min-h-[45px] overflow-hidden flex justify-end bg-pale_yellow bg-opacity-40 border-b border-b-grey border-opacity-20">
+  <swiper [config]="config" class="mySwiper w-full">
+    <ng-template swiperSlide class="flex hover:bg-white hover:shadow-md cursor-pointer">
+      <div class="w-full flex justify-end items-center">
+        <p class="font-bold text-sm text-red">العروض</p>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide class="flex justify-center hover:bg-white hover:shadow-md cursor-pointer" *ngFor="let category of headerCategories">
+      <div class="flex justify-end items-center">
+        <p class="font-bold text-sm">{{category}}</p>
+      </div>
+    </ng-template>
+
+    </swiper>
+  <div class="ml-4 min-w-[200px] max-w-[400px] shadow-xl flex cursor-pointer" >
+    <div class="w-full flex justify-end items-center border-l border-l-grey border-opacity-20">
+      <p class="mr-12 font-bold text-sm">جميع الفئات</p>
+    </div>
+  </div>
 </div>
