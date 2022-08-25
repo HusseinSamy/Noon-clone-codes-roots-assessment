@@ -12,7 +12,10 @@ module.exports = {
     colors: {
       yellow: "#feee00",
       background_color: "#f7f7fa",
-      white: "#ffffff"
+      white: "#ffffff",
+      grey: "#424553",
+      pale_yellow: "#fffde6",
+      red: "#e01e1e"
 
     },
     fontFamily: {
