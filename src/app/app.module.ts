@@ -9,6 +9,7 @@ import { MainCarouselComponent } from './main-carousel/main-carousel.component';
 import { CategoriesCarouselComponent } from './categories-carousel/categories-carousel.component';
 import { SalesComponent } from './sales/sales.component';
 import { HeaderComponent } from './header/header.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { HeaderComponent } from './header/header.component';
         CategoriesCarouselComponent,
         SalesComponent,
         HeaderComponent,
+        ProductsComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, SwiperModule, HttpClientModule],
     providers: [],
