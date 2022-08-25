@@ -16,9 +16,9 @@ export class MainCarouselComponent implements OnInit {
     }
     fileList: string[] = [];
     config = this.swiper.config;
-    
-    mainSliderUrls:string[] = []; 
-    mainSliderEndpoint:string = '/MobileMainPage/GetMainSliders'; 
+
+    mainSliderUrls:string[] = [];
+    mainSliderEndpoint:string = '/MobileMainPage/GetMainSliders';
 
     ngOnInit(): void {
       this.data.PostEndpoints(this.data.baseUrl + this.mainSliderEndpoint).subscribe({
@@ -26,13 +26,10 @@ export class MainCarouselComponent implements OnInit {
           const main = (dataRes as MainSlider[]).filter(el => {
             return el.AdsSpacesprice.length > 0;
           });
-          console.log(dataRes)
-          console.log(main)
           const ads = [];
           for (let slider of main) {
             ads.push(slider.AdsSpacesprice);
           }
-          console.log(ads)
           const slides:Slider[] = [];
           ads.forEach(el => {
             el.forEach(item => {
@@ -42,12 +39,6 @@ export class MainCarouselComponent implements OnInit {
           slides.forEach((el) => {
             this.mainSliderUrls.push(this.data.subRequestUrl + `/${el.photo}`);
           })
-          console.log(this.mainSliderUrls);
-          
-          // adsSpaces.map(el => {
-          //   if(el.)
-          // })
-
         }
       })
     }
