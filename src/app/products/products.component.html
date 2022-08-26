@@ -1,13 +1,13 @@
-<div class="max-w-[1440px] w-full min-h-[300px] bg-pale_yellow bg-opacity-40">
+<div class="max-w-[1440px] w-full min-h-[300px] bg-pale_yellow">
   <div class="block ml-8 my-10">
     <h1 class="text-2xl font-bold">Free Delivery Branches</h1>
   </div>
-  <div class="w-full min-h-[300px] flex justify-center bg-background_color border-y py-3 border-grey">
+  <div class="w-full min-h-[300px] flex justify-center bg-pale_yellow">
   <swiper [config]="config" class="flex justify-center items-center mySwiper w-full">
     <ng-template swiperSlide class="w-full flex justify-center hover:bg-white hover:shadow-md cursor-pointer "*ngFor="let item of freeDliveryBranchesCusines; index as i">
       <div class="w-full flex flex-col justify-center items-center">
-        <img class="max-w-[200px] border-x border-y border-grey border-opacity-30" src={{freeDliveryBranchesImages[i]}} alt="">
-        <div class="flex flex-col justify-start items-center w-full">
+        <img class="max-w-[200px]" src={{freeDliveryBranchesImages[i]}} alt="">
+        <div class="flex flex-col justify-start items-center w-full pb-4">
           <h1 class="self-start ml-4 font-bold text-base">{{freeDliveryBranchesNames[i]}}</h1>
           <h2 class="self-start ml-4 font-normal text-sm">{{item}}</h2>
         </div>
@@ -15,24 +15,20 @@
     </ng-template>
     </swiper>
 </div>
-<div class="w-full min-h-[300px] space-y-3 flex flex-col justify-center bg-pale_yellow bg-opacity-40">
+<div class="w-full min-h-[300px] flex flex-col justify-center bg-pale_yellow">
   <div class="block ml-8 my-10">
     <h1 class="text-2xl font-bold">Most Ordered Branches</h1>
   </div>
-  <div class="w-full flex flex-col" *ngFor="let item of mostOrderedBranches; index as i">
-    <h1 class="self-start ml-4 font-bold text-xl mb-4">{{item}}</h1>
-    <img class="max-h-[300px] object-cover mb-4" src="{{mostOrderedBranchesCovers[i]}}" alt="">
-    <swiper [config]="config" class="flex justify-center items-center mySwiper w-full bg-background_color border-y py-3 border-grey">
+    <swiper [config]="config" class="flex justify-center items-center mySwiper w-full bg-pale_yellow">
       <ng-template swiperSlide class="w-full flex justify-center hover:bg-white hover:shadow-md cursor-pointer "*ngFor="let item of mostOrderedBranchesCuisines; index as i">
       <div class="w-full flex flex-col justify-center items-center">
-        <img class="max-w-[200px] border-x border-y border-grey border-opacity-30" src={{mostOrderedBranchesLogos[i]}} alt="">
-        <div class="flex flex-col justify-start items-center w-full">
+        <img class="min-h-[240px] max-w-[200px]" src={{mostOrderedBranchesLogos[i]}} alt="">
+        <div class="flex flex-col justify-start items-center w-full pb-4">
           <h1 class="self-start ml-4 font-bold text-base">{{mostOrderedBranchesNames[i]}}</h1>
           <h2 class="self-start ml-4 font-normal text-sm">{{item}}</h2>
         </div>
       </div>
     </ng-template>
   </swiper>
-</div>
 </div>
 </div>
