@@ -20,11 +20,9 @@ export class ProductsComponent implements OnInit {
   freeDliveryBranchesImages: string[] = [];
   freeDliveryBranchesCusines: string[] = [];
 
-  mostOrderedBranches: string[] = [];
   mostOrderedBranchesCuisines: string[] = [];
   mostOrderedBranchesNames: string[] = [];
   mostOrderedBranchesLogos: string[] = [];
-  mostOrderedBranchesCovers: string[] = [];
   response: Products ;
 
   async GetFreeDliveryBranches() {
@@ -50,8 +48,6 @@ export class ProductsComponent implements OnInit {
   }
   getMostOrderedBranch() {
     this.response.getMostOrderedBranch.data.forEach(el => {
-      this.mostOrderedBranches.push(el.name);
-      this.mostOrderedBranchesCovers.push(`${this.http.subRequestUrl}/${el.cover}`);
       el.branches.restaurant.cuisines.forEach(element => {
         this.mostOrderedBranchesCuisines.push(element.name);
         this.mostOrderedBranchesNames.push(el.branches.name);
@@ -60,8 +56,6 @@ export class ProductsComponent implements OnInit {
       })
 
     });
-    console.log(this.mostOrderedBranches);
-    console.log(this.mostOrderedBranchesCovers);
     console.log(this.response);
   }
   ngOnInit(): void {
