@@ -72,33 +72,38 @@ export class SwiperService {
     config3: SwiperOptions = {
       navigation: true,
       scrollbar: { draggable: true },
-      breakpoints: {
-      350: {
-        slidesPerView:2,
-        spaceBetween:0,
-        slidesPerGroup:2,
-      },
-      460: {
-        slidesPerView:3,
-        spaceBetween:0,
-        slidesPerGroup:2,
-      },
-      640: {
-        slidesPerView:4,
-        spaceBetween:0,
-        slidesPerGroup:2,
-      },
-      790: {
-        slidesPerView:5,
-        spaceBetween:0,
-        slidesPerGroup:2,
-      },
-      1440: {
-        slidesPerView:10,
-        spaceBetween:0,
-        slidesPerGroup:2,
-      }
-    }
+      setWrapperSize: false,
+      slidesPerView: "auto",
+      freeMode: true,
+
+    //   breakpoints: {
+    //   350: {
+    //     slidesPerView:2,
+    //     spaceBetween:0,
+    //     slidesPerGroup:2,
+    //   },
+    //   460: {
+    //     slidesPerView:3,
+    //     spaceBetween:0,
+    //     slidesPerGroup:2,
+    //   },
+    //   640: {
+    //     slidesPerView:4,
+    //     spaceBetween:0,
+    //     slidesPerGroup:2,
+    //   },
+    //   790: {
+    //     slidesPerView:5,
+    //     spaceBetween:0,
+    //     slidesPerGroup:2,
+    //   },
+    //   1440: {
+    //     spaceBetween:0,
+    //     slidesPerGroup:2,
+    //     maxBackfaceHiddenSlides: 0,
+    //     centerInsufficientSlides: true
+    //   }
+    // }
   }
   config4: SwiperOptions = {
     navigation: true,
