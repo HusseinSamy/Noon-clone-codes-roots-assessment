@@ -123,7 +123,7 @@
                         <p class="text-grey text-sm font-medium">تسليم إلى</p>
                         <p class="text-grey text-sm font-bold">القاهرة</p>
                     </div>
-                    <img class="w-[25px]" src="assets/others/eg.svg" alt="" />
+                    <img class="w-[30px]" src="assets/others/eg.svg" alt="" />
                 </div>
                 <div
                     class="mx-6 lg:mx-8 flex flex-row-reverse items-center w-full overflow-hidden max-w-[1220px] min-w-[35px] p-2 rounded-md min-h-[8px] max-h-[36px] bg-white"
@@ -159,20 +159,15 @@
 </div>
 
 <div class="w-screen min-h-[45px] overflow-hidden flex justify-end bg-pale_yellow bg-opacity-40 border-b border-b-grey border-opacity-20">
-  <swiper [config]="config" class="mySwiper w-full">
-    <ng-template swiperSlide class="flex hover:bg-white hover:shadow-md cursor-pointer">
-      <div class="w-full flex justify-end items-center">
-        <p class="font-bold text-sm text-red">العروض</p>
-      </div>
-    </ng-template>
-    <ng-template swiperSlide class="flex justify-center hover:bg-white hover:shadow-md cursor-pointer" *ngFor="let category of headerCategories">
-      <div class="flex justify-end items-center">
+  <swiper [config]="config" class="min-w-[60%] flex justify-end m-0">
+    <ng-template swiperSlide class="flex justify-center hover:bg-white hover:shadow-md cursor-pointer w-fit" *ngFor="let category of headerCategories">
+      <div class="mx-2 min-w-max flex justify-center items-center">
         <p class="font-bold text-sm">{{category}}</p>
-      </div>
+        </div>
     </ng-template>
 
     </swiper>
-  <div class="ml-4 min-w-[200px] max-w-[400px] shadow-xl flex cursor-pointer" >
+  <div class="min-w-[200px] max-w-[400px] shadow-xl flex cursor-pointer">
     <div class="w-full flex justify-end items-center border-l border-l-grey border-opacity-20">
       <p class="mr-12 font-bold text-sm">جميع الفئات</p>
     </div>
