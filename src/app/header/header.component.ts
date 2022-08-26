@@ -9,8 +9,7 @@ import { SwiperService } from 'src/_services/swiper.service';
 export class HeaderComponent implements OnInit {
     constructor(private swiper: SwiperService) {}
     config = this.swiper.config3;
-    headerCategories = ["الإلكترونيات","موبايلات","رجالية",
-    "نسائية","المنزل","الجمال و العطور","الاطفال و الالعاب",
-    "سوبر ماركت","بيع في نون"]
+    headerCategories = ["بيع في نون","سوبر ماركت","الأطفال و الألعاب","الجمال و العطور","المنزل","نسائية","رجالية","موبايلات","الإلكترونيات","عروض",]
+
     ngOnInit(): void {}
 }
