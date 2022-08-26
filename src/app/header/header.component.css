@@ -1,0 +1,10 @@
+.swiper-slide {
+    width: fit-content;
+}
+.swiper {
+  margin: 0;
+  }
+.swiper-wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
