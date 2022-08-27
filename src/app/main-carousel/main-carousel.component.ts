@@ -17,29 +17,33 @@ export class MainCarouselComponent implements OnInit {
     fileList: string[] = [];
     config = this.swiper.config;
 
-    mainSliderUrls:string[] = [];
-    mainSliderEndpoint:string = '/MobileMainPage/GetMainSliders';
+    mainSliderUrls: string[] = [];
+    mainSliderEndpoint: string = '/MobileMainPage/GetMainSliders';
 
     ngOnInit(): void {
-      this.data.PostEndpoints(this.data.baseUrl + this.mainSliderEndpoint).subscribe({
-        next: (dataRes) => {
-          const main = (dataRes as MainSlider[]).filter(el => {
-            return el.AdsSpacesprice.length > 0;
-          });
-          const ads = [];
-          for (let slider of main) {
-            ads.push(slider.AdsSpacesprice);
-          }
-          const slides:Slider[] = [];
-          ads.forEach(el => {
-            el.forEach(item => {
-              slides.push(item.sliders)
-            })
-          });
-          slides.forEach((el) => {
-            this.mainSliderUrls.push(this.data.subRequestUrl + `/${el.photo}`);
-          })
-        }
-      })
+        this.data
+            .PostEndpoints(this.data.baseUrl + this.mainSliderEndpoint)
+            .subscribe({
+                next: (dataRes) => {
+                    const main = (dataRes as MainSlider[]).filter((el) => {
+                        return el.AdsSpacesprice.length > 0;
+                    });
+                    const ads = [];
+                    for (let slider of main) {
+                        ads.push(slider.AdsSpacesprice);
+                    }
+                    const slides: Slider[] = [];
+                    ads.forEach((el) => {
+                        el.forEach((item) => {
+                            slides.push(item.sliders);
+                        });
+                    });
+                    slides.forEach((el) => {
+                        this.mainSliderUrls.push(
+                            this.data.subRequestUrl + `/${el.photo}`
+                        );
+                    });
+                },
+            });
     }
 }

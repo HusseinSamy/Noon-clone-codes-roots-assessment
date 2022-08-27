@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
     constructor() {}
-    
+
     blackout: boolean;
     showNavBar(data: any) {
-      this.blackout = data;
+        this.blackout = data;
     }
     ngOnInit(): void {}
 }

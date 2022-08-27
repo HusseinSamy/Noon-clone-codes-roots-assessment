@@ -1,80 +1,81 @@
 <div
     class="flex justify-center items-center w-full max-w-[1440px] min-w-[460px] min-h-[222px] bg-pale_yellow"
 >
-<div
-    class="slide-container py-5 justify-center items-center w-full"
->
-        <swiper [config]="config" class="mySwiper flex justify-center items-center">
-            <ng-template swiperSlide *ngFor="let image of categoriesImagesUrls; index as i">
-                  <a
-                        class="flex flex-col justify-center items-center"
-                    >
-                        <img
-                            class="max-w-[120px]"
-                            src="{{ image }}"
-                            alt=""
-                        />
-                        <h2 class="font-cairo font-extrabold text-lg">{{categoriesHeader[i]}}</h2>
-                        <h3 class="font-cairo font-medium text-base">{{categoriesPercentage[i]}}% خصم </h3>
-                      </a>
-
-                    </ng-template>
-            <ng-template swiperSlide *ngFor="let image of categoriesImagesUrls; index as i">
-                  <a
-                        class="flex flex-col justify-center items-center"
-                    >
-                        <img
-                            class="max-w-[120px]"
-                            src="{{ image }}"
-                            alt=""
-                        />
-                        <h2 class="font-cairo font-extrabold text-lg">{{categoriesHeader[i]}}</h2>
-                        <h3 class="font-cairo font-medium text-base">{{categoriesPercentage[i]}}% خصم </h3>
-                      </a>
-
-                    </ng-template>
-            <ng-template swiperSlide *ngFor="let image of categoriesImagesUrls; index as i">
-                  <a
-                        class="flex flex-col justify-center items-center"
-                    >
-                        <img
-                            class="max-w-[120px]"
-                            src="{{ image }}"
-                            alt=""
-                        />
-                        <h2 class="font-cairo font-extrabold text-lg">{{categoriesHeader[i]}}</h2>
-                        <h3 class="font-cairo font-medium text-base">{{categoriesPercentage[i]}}% خصم </h3>
-                      </a>
-
-                    </ng-template>
-            <ng-template swiperSlide *ngFor="let image of categoriesImagesUrls; index as i">
-                  <a
-                        class="flex flex-col justify-center items-center"
-                    >
-                        <img
-                            class="max-w-[120px]"
-                            src="{{ image }}"
-                            alt=""
-                        />
-                        <h2 class="font-cairo font-extrabold text-lg">{{categoriesHeader[i]}}</h2>
-                        <h3 class="font-cairo font-medium text-base">{{categoriesPercentage[i]}}% خصم </h3>
-                      </a>
-
-                    </ng-template>
-            <ng-template swiperSlide *ngFor="let image of categoriesImagesUrls; index as i">
-                  <a
-                        class="flex flex-col justify-center items-center"
-                    >
-                        <img
-                            class="max-w-[120px]"
-                            src="{{ image }}"
-                            alt=""
-                        />
-                        <h2 class="font-cairo font-extrabold text-lg">{{categoriesHeader[i]}}</h2>
-                        <h3 class="font-cairo font-medium text-base">{{categoriesPercentage[i]}}% خصم </h3>
-                      </a>
-
-                    </ng-template>
-                  </swiper>
-                </div>
+    <div class="slide-container py-5 justify-center items-center w-full">
+        <swiper
+            [config]="config"
+            class="mySwiper flex justify-center items-center"
+        >
+            <ng-template
+                swiperSlide
+                *ngFor="let image of categoriesImagesUrls; index as i"
+            >
+                <a class="flex flex-col justify-center items-center">
+                    <img class="max-w-[120px]" src="{{ image }}" alt="" />
+                    <h2 class="font-cairo font-extrabold text-lg">
+                        {{ categoriesHeader[i] }}
+                    </h2>
+                    <h3 class="font-cairo font-medium text-base">
+                        {{ categoriesPercentage[i] }}% خصم
+                    </h3>
+                </a>
+            </ng-template>
+            <ng-template
+                swiperSlide
+                *ngFor="let image of categoriesImagesUrls; index as i"
+            >
+                <a class="flex flex-col justify-center items-center">
+                    <img class="max-w-[120px]" src="{{ image }}" alt="" />
+                    <h2 class="font-cairo font-extrabold text-lg">
+                        {{ categoriesHeader[i] }}
+                    </h2>
+                    <h3 class="font-cairo font-medium text-base">
+                        {{ categoriesPercentage[i] }}% خصم
+                    </h3>
+                </a>
+            </ng-template>
+            <ng-template
+                swiperSlide
+                *ngFor="let image of categoriesImagesUrls; index as i"
+            >
+                <a class="flex flex-col justify-center items-center">
+                    <img class="max-w-[120px]" src="{{ image }}" alt="" />
+                    <h2 class="font-cairo font-extrabold text-lg">
+                        {{ categoriesHeader[i] }}
+                    </h2>
+                    <h3 class="font-cairo font-medium text-base">
+                        {{ categoriesPercentage[i] }}% خصم
+                    </h3>
+                </a>
+            </ng-template>
+            <ng-template
+                swiperSlide
+                *ngFor="let image of categoriesImagesUrls; index as i"
+            >
+                <a class="flex flex-col justify-center items-center">
+                    <img class="max-w-[120px]" src="{{ image }}" alt="" />
+                    <h2 class="font-cairo font-extrabold text-lg">
+                        {{ categoriesHeader[i] }}
+                    </h2>
+                    <h3 class="font-cairo font-medium text-base">
+                        {{ categoriesPercentage[i] }}% خصم
+                    </h3>
+                </a>
+            </ng-template>
+            <ng-template
+                swiperSlide
+                *ngFor="let image of categoriesImagesUrls; index as i"
+            >
+                <a class="flex flex-col justify-center items-center">
+                    <img class="max-w-[120px]" src="{{ image }}" alt="" />
+                    <h2 class="font-cairo font-extrabold text-lg">
+                        {{ categoriesHeader[i] }}
+                    </h2>
+                    <h3 class="font-cairo font-medium text-base">
+                        {{ categoriesPercentage[i] }}% خصم
+                    </h3>
+                </a>
+            </ng-template>
+        </swiper>
+    </div>
 </div>

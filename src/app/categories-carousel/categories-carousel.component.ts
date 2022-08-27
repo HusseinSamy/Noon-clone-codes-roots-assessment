@@ -28,16 +28,16 @@ export class CategoriesCarouselComponent implements OnInit {
                     this.storeCategoriesData();
                 },
                 error: (err) => {
-                    console.log(
-                        err
-                    );
+                    console.log(err);
                 },
             });
     }
 
     storeCategoriesData() {
         this.categories.forEach((el) => {
-            this.categoriesImagesUrls.push(this.http.subRequestUrl + `/${el.photo}`);
+            this.categoriesImagesUrls.push(
+                this.http.subRequestUrl + `/${el.photo}`
+            );
             this.categoriesHeader.push(el.name);
             this.categoriesPercentage.push(el.percentage);
         });

@@ -4,112 +4,122 @@ import { SwiperService } from 'src/_services/swiper.service';
 import { Products, RestaurantsElement } from 'src/_models/products.model';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+    selector: 'app-products',
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
+    constructor(private swiper: SwiperService, public http: DataService) {}
+    config = this.swiper.config4;
+    productsEndpoint: string = '/MobileMainPage/GetHomePage';
 
-  constructor(private swiper: SwiperService, public http: DataService) {
+    response: Products;
 
-   }
-  config = this.swiper.config4;
-  productsEndpoint:string = '/MobileMainPage/GetHomePage';
+    GetData() {
+        return this.http.PostEndpoints(
+            this.http.baseUrl + this.productsEndpoint
+        );
+    }
 
-  response: Products ;
+    freeDliveryBranchesNames: string[] = [];
+    freeDliveryBranchesImages: string[] = [];
+    freeDliveryBranchesCusines: string[] = [];
 
-  GetData() {
-    return this.http.PostEndpoints(this.http.baseUrl + this.productsEndpoint);
-  }
+    GetFreeDliveryBranches() {
+        const branches = this.response.GetFreeDliveryBranches.data;
+        branches.forEach((element) => {
+            const logo =
+                (element.logo = `${this.http.subRequestUrl}/${element.logo}`);
+            element.cuisines.forEach((el) => {
+                this.freeDliveryBranchesNames.push(element.name);
+                this.freeDliveryBranchesImages.push(logo);
+                this.freeDliveryBranchesCusines.push(el.name);
+            });
+        });
+    }
 
-  freeDliveryBranchesNames: string[] = [];
-  freeDliveryBranchesImages: string[] = [];
-  freeDliveryBranchesCusines: string[] = [];
+    mostOrderedBranchesCuisines: string[] = [];
+    mostOrderedBranchesNames: string[] = [];
+    mostOrderedBranchesLogos: string[] = [];
 
-  GetFreeDliveryBranches() {
-    const branches = this.response.GetFreeDliveryBranches.data;
-    branches.forEach(element => {
-      const logo = element.logo = `${this.http.subRequestUrl}/${element.logo}`;
-      element.cuisines.forEach(el => {
-        this.freeDliveryBranchesNames.push(element.name);
-        this.freeDliveryBranchesImages.push(logo);
-        this.freeDliveryBranchesCusines.push(el.name);
-      })
-    })
-  }
+    getMostOrderedBranch() {
+        this.response.getMostOrderedBranch.data.forEach((el) => {
+            el.branches.restaurant.cuisines.forEach((element) => {
+                this.mostOrderedBranchesCuisines.push(element.name);
+                this.mostOrderedBranchesNames.push(el.branches.name);
+                this.mostOrderedBranchesLogos.push(
+                    `${this.http.subRequestUrl}/${el.branches.restaurant.logo}`
+                );
+            });
+        });
+        console.log(this.response);
+    }
 
-  mostOrderedBranchesCuisines: string[] = [];
-  mostOrderedBranchesNames: string[] = [];
-  mostOrderedBranchesLogos: string[] = [];
+    mostSellItemsPhotos: string[] = [];
+    mostSellItemsNames: string[] = [];
+    mostSellItemsDescriptions: string[] = [];
+    mostSellItemsPrices: number[] = [];
 
-  getMostOrderedBranch() {
-    this.response.getMostOrderedBranch.data.forEach(el => {
-      el.branches.restaurant.cuisines.forEach(element => {
-        this.mostOrderedBranchesCuisines.push(element.name);
-        this.mostOrderedBranchesNames.push(el.branches.name);
-        this.mostOrderedBranchesLogos.push(`${this.http.subRequestUrl}/${el.branches.restaurant.logo}`);
-      })
-    });
-    console.log(this.response);
-  }
+    getMostSellItems() {
+        this.response.MostSellItems.data.forEach((el) => {
+            this.mostSellItemsPhotos.push(
+                `${this.http.subRequestUrl}/${el.menu_categories_items.photo}`
+            );
+            this.mostSellItemsNames.push(el.menu_categories_items.name);
+            this.mostSellItemsDescriptions.push(
+                el.menu_categories_items.descriptions
+            );
+            this.mostSellItemsPrices.push(el.menu_categories_items.price);
+        });
+    }
 
-  mostSellItemsPhotos: string[] = [];
-  mostSellItemsNames: string[] = [];
-  mostSellItemsDescriptions: string[] = [];
-  mostSellItemsPrices: number[] = [];
+    percentageForVendorsPhotos: string[] = [];
+    percentageForVendorsNames: string[] = [];
+    percentageForVendorsCuisines: string[] = [];
 
-  getMostSellItems() {
-    this.response.MostSellItems.data.forEach(el => {
-      this.mostSellItemsPhotos.push(`${this.http.subRequestUrl}/${el.menu_categories_items.photo}`);
-      this.mostSellItemsNames.push(el.menu_categories_items.name);
-      this.mostSellItemsDescriptions.push(el.menu_categories_items.descriptions);
-      this.mostSellItemsPrices.push(el.menu_categories_items.price);
-    });
-  }
+    getPercentageForVendors() {
+        this.response.GetPercentageForVendors.data.forEach((el) => {
+            el.restaurants.cuisines.forEach((element) => {
+                this.percentageForVendorsPhotos.push(
+                    `${this.http.subRequestUrl}/${el.restaurants.logo}`
+                );
+                this.percentageForVendorsNames.push(element.name);
+                this.percentageForVendorsCuisines.push(el.restaurants.name);
+            });
+        });
+    }
 
-  percentageForVendorsPhotos: string[] = [];
-  percentageForVendorsNames: string[] = [];
-  percentageForVendorsCuisines: string[] = [];
+    nearestBranchePhotos: string[] = [];
+    nearestBrancheNames: string[] = [];
+    nearestBrancheCuisines: string[] = [];
+    nearestBrancheDeliveryTime: number[] = [];
 
-  getPercentageForVendors() {
-    this.response.GetPercentageForVendors.data.forEach(el => {
-      el.restaurants.cuisines.forEach(element => {
-        this.percentageForVendorsPhotos.push(`${this.http.subRequestUrl}/${el.restaurants.logo}`);
-        this.percentageForVendorsNames.push(element.name);
-        this.percentageForVendorsCuisines.push(el.restaurants.name);
-      });
-    });
-  }
+    getNearestBranche() {
+        this.response.GetNearestBranche.data.forEach((el) => {
+            el.cuisines.forEach((element) => {
+                this.nearestBranchePhotos.push(
+                    `${this.http.subRequestUrl}/${el.logo}`
+                );
+                this.nearestBrancheNames.push(element.name);
+                this.nearestBrancheCuisines.push(el.name);
+                this.nearestBrancheDeliveryTime.push(el.delivery_time);
+            });
+        });
+    }
 
-  nearestBranchePhotos: string[] = [];
-  nearestBrancheNames: string[] = [];
-  nearestBrancheCuisines: string[] = [];
-  nearestBrancheDeliveryTime: number[] = [];
-
-  getNearestBranche() {
-    this.response.GetNearestBranche.data.forEach(el => {
-      el.cuisines.forEach(element => {
-        this.nearestBranchePhotos.push(`${this.http.subRequestUrl}/${el.logo}`);
-        this.nearestBrancheNames.push(element.name);
-        this.nearestBrancheCuisines.push(el.name);
-        this.nearestBrancheDeliveryTime.push(el.delivery_time);
-      });
-    });
-  }
-
-  ngOnInit(): void {
-    this.GetData().subscribe({
-      next: (data) => {
-        this.response = data as Products;
-        this.GetFreeDliveryBranches();
-        this.getMostOrderedBranch();
-        this.getMostSellItems();
-        this.getPercentageForVendors();
-        this.getNearestBranche();
-        },
-      error: (err) => {
-        console.log(err);
-      }
-    });
-  }
+    ngOnInit(): void {
+        this.GetData().subscribe({
+            next: (data) => {
+                this.response = data as Products;
+                this.GetFreeDliveryBranches();
+                this.getMostOrderedBranch();
+                this.getMostSellItems();
+                this.getPercentageForVendors();
+                this.getNearestBranche();
+            },
+            error: (err) => {
+                console.log(err);
+            },
+        });
+    }
 }
