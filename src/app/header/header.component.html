@@ -1,7 +1,7 @@
 <div
     class="flex flex-row justify-center items-center w-screen max-h-max bg-yellow min-h-[65px] overflow-hidden p-2"
 >
-    <div class="flex justify-center w-full mx-4 lg:mx-10">
+    <div class="flex justify-center w-full mx-4">
         <div class="flex flex-col justify-center items-center w-full">
             <div class="lg:hidden flex justify-end items-center w-full mb-2">
                 <div
@@ -96,12 +96,12 @@
                 </div>
 
                 <div class="flex min-w-max mr-6">
-                    <div class="flex flex-col items-end mr-2">
+                  <div class="flex flex-col items-end mr-2">
                     <div class="flex justify-between items-end mr-2">
                       <img src="assets/others/dropdownArrow.svg" alt="">
                         <p class="text-grey text-sm font-medium">تسليم إلى</p>
-                        <p class="text-grey text-sm font-bold">القاهرة</p>
-                    </div>
+                      </div>
+                      <p class="text-grey text-sm font-bold">القاهرة</p>
                     </div>
                     <img class="w-[30px]" src="assets/others/eg.svg" alt="" />
                 </div>
@@ -164,8 +164,15 @@
     </div>
 </div>
 
-<div class="w-screen min-h-[45px] overflow-hidden flex justify-end bg-pale_yellow bg-opacity-40 border-b border-b-grey border-opacity-20">
-  <swiper [config]="config" class="min-w-[60%] flex justify-end m-0">
+<div class="w-screen min-h-[45px] overflow-hidden flex justify-end bg-pale_yellow border-b border-b-grey border-opacity-20">
+  <swiper [config]="config" class="w-full bg-pale_yellow flex justify-end m-0">
+
+    <ng-template swiperSlide class="flex justify-center hover:bg-white hover:shadow-md cursor-pointer">
+      <div class="mx-2 min-w-max flex justify-center items-center">
+        <p class="font-bold text-sm text-red">عروض</p>
+        </div>
+    </ng-template>
+
     <ng-template swiperSlide class="flex justify-center hover:bg-white hover:shadow-md cursor-pointer w-fit" *ngFor="let category of headerCategories">
       <div class="mx-2 min-w-max flex justify-center items-center">
         <p class="font-bold text-sm">{{category}}</p>
@@ -173,10 +180,11 @@
     </ng-template>
 
     </swiper>
-  <div class="min-w-[200px] max-w-[400px] shadow-xl flex cursor-pointer">
+      <div class="min-w-[200px] max-w-[400px] shadow-xl flex cursor-pointer" (click)="toggleNavBar()">
     <div class="w-full flex justify-between items-center border-l border-l-grey border-opacity-20">
-      <img src="assets/others/dropdownArrowBlue.svg" class="ml-4 fill-red" alt="">
-      <p class="mr-12 font-bold text-sm text-blue">جميع الفئات</p>
+      <img src="assets/others/dropdownArrowBlue.svg" class="ml-4" alt="">
+      <p class="mr-6 font-bold text-sm text-blue">جميع الفئات</p>
     </div>
   </div>
 </div>
+<app-nav-bar-dropdown (mouseleave)="toggleNavBar()"  *ngIf="showNavBar"></app-nav-bar-dropdown>
