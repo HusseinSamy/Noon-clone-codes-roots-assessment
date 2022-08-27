@@ -10,6 +10,7 @@ import { CategoriesCarouselComponent } from './categories-carousel/categories-ca
 import { SalesComponent } from './sales/sales.component';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
+import { NavBarDropdownComponent } from './nav-bar-dropdown/nav-bar-dropdown.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { ProductsComponent } from './products/products.component';
         SalesComponent,
         HeaderComponent,
         ProductsComponent,
+        NavBarDropdownComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, SwiperModule, HttpClientModule],
     providers: [],
