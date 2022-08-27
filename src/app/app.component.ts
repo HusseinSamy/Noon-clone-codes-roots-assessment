@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/_services/data.service';
 
 @Component({
     selector: 'app-root',
@@ -8,6 +7,10 @@ import { DataService } from 'src/_services/data.service';
 })
 export class AppComponent implements OnInit {
     constructor() {}
-
+    
+    blackout: boolean;
+    showNavBar(data: any) {
+      this.blackout = data;
+    }
     ngOnInit(): void {}
 }
