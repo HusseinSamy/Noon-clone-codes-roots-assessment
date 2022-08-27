@@ -9,12 +9,7 @@ import { Slider } from 'src/_models/slider.model';
     styleUrls: ['./main-carousel.component.css'],
 })
 export class MainCarouselComponent implements OnInit {
-    constructor(private swiper: SwiperService, private data: DataService) {
-        for (let i = 2; i < 9; i++) {
-            this.fileList.push(`assets/main carousel/${i}.jpeg`);
-        }
-    }
-    fileList: string[] = [];
+    constructor(private swiper: SwiperService, private data: DataService) {}
     config = this.swiper.config;
 
     mainSliderUrls: string[] = [];
