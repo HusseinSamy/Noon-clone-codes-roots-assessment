@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/_services/data.service';
 import { SwiperService } from 'src/_services/swiper.service';
-import { Products, RestaurantsElement } from 'src/_models/products.model';
+import { Products} from 'src/_models/products.model';
 
 @Component({
     selector: 'app-products',
