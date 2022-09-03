@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { ProductsPageComponent } from './products-page/products-page.component';
+import {CarouselModule} from 'primeng/carousel';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { ProductsPageComponent } from './products-page/products-page.component';
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
+      CarouselModule
       ],
     providers: [],
     bootstrap: [AppComponent],
