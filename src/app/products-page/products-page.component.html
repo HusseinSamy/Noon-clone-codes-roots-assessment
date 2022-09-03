@@ -1,1 +1,6 @@
-<p>products-page works!</p>
+<p-carousel [value]="cars" [numVisible]="3" [numScroll]="1" orientation="vertical" [showIndicators]=true [showNavigators] = true [responsiveOptions]="responsiveOptions">
+  <ng-template let-car pTemplate="item">
+      {{car.name}}
+      <img src="{{car.image}}" alt="">
+  </ng-template>
+</p-carousel>
