@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { bag } from 'src/_models/bag.model';
 
 @Component({
   selector: 'app-products-page',
@@ -24,22 +25,29 @@ export class ProductsPageComponent implements OnInit {
     }
 ];
   constructor() { }
-  cars = [{
-    name: 'koko',
-    image: 'assets/sales/1.JPG'
+  image: string = 'assets/bags/1.avif'
+  quantity: string = '1';
+  bags: bag[] = [{
+    image: 'assets/bags/1.avif'
   },{
-    name: 'koko',
-    image: 'assets/sales/1.JPG'
+    image: 'assets/bags/2.avif'
   },{
-    name: 'koko',
-    image: 'assets/sales/1.JPG'
+    image: 'assets/bags/3.avif'
   },{
-    name: 'koko',
-    image: 'assets/sales/1.JPG'
+    image: 'assets/bags/4.avif'
   },{
-    name: 'koko',
-    image: 'assets/sales/1.JPG'
+    image: 'assets/bags/5.avif'
   },]
+  onClick(event: any){
+    const htmlElement = (((event as MouseEvent).target as HTMLImageElement).src);
+    this.image = htmlElement;
+
+  }
+  quntityChanged(event: any){
+    console.log(event);
+    const htmlElement = (((event as MouseEvent).target as HTMLAnchorElement).text);
+    this.quantity = htmlElement;
+  }
   ngOnInit(): void {
   }
 
