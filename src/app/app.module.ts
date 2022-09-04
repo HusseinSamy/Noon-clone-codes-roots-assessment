@@ -4,20 +4,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageModule } from './home-page/home-page.module';
-import { ProductsPageComponent } from './products-page/products-page.component';
-import {CarouselModule} from 'primeng/carousel';
+import { ProductsPageModule } from './products-page/products-page.module';
 
 @NgModule({
     declarations: [
       AppComponent,
-      ProductsPageComponent
     ],
     imports: [
       HomePageModule,
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      CarouselModule
+      ProductsPageModule
       ],
     providers: [],
     bootstrap: [AppComponent],
