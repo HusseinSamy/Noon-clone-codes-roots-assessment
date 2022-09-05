@@ -27,7 +27,7 @@ export class SpecificationsComponent implements OnInit {
   }
   showSection(event: MouseEvent){
     console.log(event);
-    this.show = (event.target as HTMLParagraphElement).textContent!.toLowerCase()
+    this.show = (event.target as HTMLParagraphElement).textContent!.toLowerCase();
   }
   getKey(obj: Object){
     return Object.keys(obj);

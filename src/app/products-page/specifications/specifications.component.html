@@ -1,25 +1,25 @@
 <!------------------------ CONTAINER ------------------------>
 
 <div class="d-flex border-1 border-bottom mb-4">
-  <div class="py-4 px-0 me-5" (click)="showSection($event)">
+  <!------------------------ NAVIGATION ------------------------>
+  <div [ngClass]="{'active': show === 'overview'}" class="py-4 px-0 me-5" (click)="showSection($event)">
     <p class="title text-grey m-0 fw-bold">OVERVIEW</p>
   </div>
-  <div class="py-4 px-0 me-5" (click)="showSection($event)">
+  <div [ngClass]="{'active': show === 'specifications'}" class="py-4 px-0 me-5" (click)="showSection($event)">
     <p class="title text-grey m-0 fw-bold">SPECIFICATIONS</p>
   </div>
-  <div class="py-4 px-0" (click)="showSection($event)">
+  <div [ngClass]="{'active': show === 'reviews'}" class="py-4 px-0" (click)="showSection($event)">
     <p class="title text-grey m-0 fw-bold">REVIEWS</p>
   </div>
 </div>
 
-
-<!------------------------ SECTION 1 ------------------------>
+  <!------------------------ SECTION 1 ------------------------>
 <div *ngIf="show === 'overview'" class="row">
   <h6 class="fw-bold mb-2">Overview</h6>
   <p>{{overview}}</p>
 </div>
 
-<!------------------------ SECTION 2 ------------------------>
+  <!------------------------ SECTION 2 ------------------------>
 <div *ngIf="show === 'specifications'" class="row">
   <h6 class="fw-bold mb-2">Specifications</h6>
   <div *ngFor="let spec of specs; index as i"
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<!------------------------ SECTION 3 ------------------------>
+  <!------------------------ SECTION 3 ------------------------>
 <div *ngIf="show === 'reviews'" class="row my-5 justify-content-center">
   <div class="col-lg-2">
     <div class="d-flex flex-column justify-content-center align-items-center">

@@ -3,6 +3,10 @@
   transition-duration: 500ms;
 }
 
+.active{
+  border-bottom: #3866DF solid 3px;
+}
+
 .text-grey{
   color: #8c8f97;
 }
