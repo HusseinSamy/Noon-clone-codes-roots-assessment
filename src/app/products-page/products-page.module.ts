@@ -4,11 +4,17 @@ import { CarouselModule } from 'primeng/carousel';
 
 import { ImgMagnifier } from "ng-img-magnifier";
 import { ProductsPageComponent } from './products-page.component';
+import { SpecificationsComponent } from './specifications/specifications.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
 @NgModule({
-  declarations: [ProductsPageComponent],
+  declarations: [
+    ProductsPageComponent,
+    SpecificationsComponent,
+    ProductDetailsComponent
+  ],
   imports: [
     CommonModule,
     ImgMagnifier,
