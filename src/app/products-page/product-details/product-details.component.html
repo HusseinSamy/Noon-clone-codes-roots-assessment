@@ -1,0 +1,164 @@
+<!---------------------------- COLUMN 2 --------------------------->
+
+<div class="container px-3 d-flex flex-sm-column justify-content-sm-center align-items-sm-center justify-content-lg-start align-items-lg-start    ">
+  <div class="row py-3">
+    <span class="p-0 fs-7 fw-normal"> Fashion > Bags & Luggage > Backpacks > Casual Backpacks </span>
+  </div>
+  <div class="row justify-content-xxl-start justify-content-sm-center">
+    <div class="col-1 align-self-start carousel-container">
+      <p-carousel styleClass="custom-carousel" [style]="{'align-items':'center'}" [value]="bags" [numVisible]="4" verticalViewPortHeight="480px" [numScroll]="1" orientation="vertical" [showIndicators]="false">
+        <ng-template let-bag pTemplate="item">
+          <img (click)="onClick($event)" class="product-image" src="{{bag.image}}">
+        </ng-template>
+      </p-carousel>
+    </div>
+    <div class="col-xxl-3 col-sm-4 overflow-hidden magnifier-container">
+      <ng-img-magnifier class="photo-container" [thumbImage]="image" [fullImage]="image"
+    [top]="'6'" [right]="'40.5'"
+    [resultWidth]="'20'" [resultHeight]="'50'"
+    [imgWidth]="'380'" [imgHeight]="'517'">
+      </ng-img-magnifier>
+    </div>
+
+<!---------------------------- COLUMN 2 --------------------------->
+
+<div class="mx-5 col-sm-6 col-xxl-4 align-self-start">
+      <p class="fs-6 m-0 p-0 fw-normal">FORCE</p>
+      <p class="fs-4 p-0 fw-semibold">Logo Printed Backpack Red</p>
+      <div class="row d-flex align-items-center">
+        <div class="p-0 col-6 mb-3 border-end border-2">
+          <p class="fs-7 m-0 fw-semibold">Model Number : FDB-20-37</p>
+        </div>
+        <div class="col-6 6 mb-3 d-flex align-items-center">
+          <div class="bg-rating-color d-flex align-items-center justify-content-center rating-width rounded-2">
+              <p class="my-0 fs-7 fw-semibold">5.0</p>
+              <img class="ms-1" style="width: 15px; height: 15px;" src="assets/others/star-filled.svg" alt="">
+            </div>
+            <a class="ms-4" href="">3 Ratings</a>
+        </div>
+        <div class="p-0 col-2 d-flex align-items-center">
+          <p class="fs-7">Was:</p>
+        </div>
+        <div class="col-10 p-0">
+          <p class="fs-7"><del>EGP 299.00</del></p>
+        </div>
+        <div class="p-0 col-2 d-flex align-items-center">
+          <p class="fs-7">Now:</p>
+        </div>
+        <div class="col-10 p-0 d-flex align-items-center">
+          <p class="fw-bold fs-5">EGP 125.00</p>
+          <p class="fw-normal fs-7 ms-2">Inclusive of VAT</p>
+        </div>
+        <div class="p-0 col-2 d-flex align-items-center">
+          <p class="fs-7">Saving:</p>
+        </div>
+        <div class="col-10 p-0 d-flex align-items-center">
+          <div class="d-flex">
+            <p class="fs-7 fw-bold">EGP 255.00</p>
+            <div class="bg-saving-color ps-1 pb-1 ms-2 rating-width rounded-2">
+              <p style="font-size: 12px;" class="my-0 fw-bold ">58% Off</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 bg-delivery d-flex flex-column align-items-center overflow-hidden p-3">
+          <div class="d-flex w-100">
+            <div class="col-8">
+              <p class="m-0 fs-7">Order in 20 hrs 34 mins</p>
+              <p class="m-0 fs-7">Delivery by <u><b>Tue, Sep 6</b></u></p>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+              <img style="width: 80px; height: 20px;" src="assets/others/fulfilment_express_v2-en.svg" alt="">
+              <img style="width: 20px; height: 20px;" src="assets/others/help.svg" alt="">
+            </div>
+          </div>
+          <div style="background-color: white;" class="p-2 mt-2 col-12 d-flex align-items-center">
+            <img src="assets/others/same_day_delivery.svg" alt="">
+            <p class="fs-7 m-0 ms-2">Want it Tomorrow? Select <b>Get It Tomorrow </b>on checkout within the next <b>34 mins.</b></p>
+          </div>
+        </div>
+
+        <p class="mx-0 my-2 p-0 fw-bold">Quantity</p>
+        <div style="height: 46px;" class= "col-12 d-flex p-0">
+          <div class="dropdown col-2">
+            <button style="height: 46px;" type="button" class="d-flex align-items-center justify-content-between rounded-2 btn-white dropdown-toggle p-2" data-bs-toggle="dropdown" aria-expanded="false">
+              <p class="m-0 pe-4 border-end border-1">{{quantity}} </p>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">2</a></li>
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">3</a></li>
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">4</a></li>
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">5</a></li>
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">6</a></li>
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">7</a></li>
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">8</a></li>
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">9</a></li>
+              <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">10</a></li>
+            </ul>
+          </div>
+          <button type="button" class="col-10 btn btn-cart fw-bold">Add to cart</button>
+        </div>
+
+      </div>
+    </div>
+
+<!---------------------------- COLUMN 3 --------------------------->
+
+    <div class="third-col col-xxl-3 col-sm-12 ">
+      <div class="col-12 d-flex align-items-center ms-2 py-3 border-bottom border-1">
+        <img style="width: 24px; height: auto;" src="assets/others/free_returns.svg" alt="">
+        <p class="m-0 ms-3 fs-7 lh-sm">Enjoy hassle free returns with this offer. <br> <u style="color: #3866DF;">Learn more</u></p>
+      </div>
+      <div class="d-flex py-4 border-bottom border-1">
+        <div style="width: 48px; height: 48px;" class="rounded-circle border-2 border justify-content-center align-items-center d-flex me-2">
+          <img style="width: 33px; height: auto;" src="assets/others/seller.svg" alt="">
+        </div>
+        <div>
+          <div class="col-12 d-flex align-items-center">
+            <p class="m-0 fs-7">Sold by <u style="color: #3866DF"><b>noon Fashion</b></u></p>
+          </div>
+          <div class="d-flex">
+            <div class="me-2 bg-rating-color d-flex align-items-center justify-content-center rating-width rounded-2">
+              <p class="my-0 fs-7 fw-semibold">5.0</p>
+              <img class="ms-1" style="width: 15px; height: 15px;" src="assets/others/star-filled.svg" alt="">
+            </div>
+            <p class="my-0 fs-7 fw-semibold">82% Postive Ratings</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="d-flex align-items-center py-4 border-1 border-bottom">
+        <div class="col-6 d-flex flex-column align-items-center border-1 border-end">
+          <img style="width: 25px; height: auto;" src="assets/others/badge_great_recent_rating.png" alt="">
+          <p class="my-0 fs-8 fw-bold">Great Recent Ratings</p>
+        </div>
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+          <p style="color: rgb(56, 174, 4);" class="fw-bold fs-5 my-0">86%</p>
+          <p class="my-0 fs-8 fw-semibold">Products as Described</p>
+        </div>
+      </div>
+      <div class="col-12 d-flex align-items-center py-4">
+        <div style="background-color: #fff8ec; width: 35px; height: 35px;" class="d-flex justify-content-center align-items-center rounded-circle">
+          <img src="assets/others/free_returns.svg" alt="">
+        </div>
+        <div class="ms-3">
+          <p class="my-0 fs-8 fw-bold">FREE RETURNS</p>
+          <p class="my-0 fs-7 fw-semibold">Get free returns on eligible items</p>
+        </div>
+      </div>
+      <div class="col-12 d-flex align-items-center py-4">
+        <img style="width: 35px; height: 35px;" src="assets/others/trusted_shipping_usp_v2.svg" alt="">
+        <div class="ms-3">
+          <p class="my-0 fs-8 fw-bold">TRUSTED SHIPPING</p>
+          <p class="my-0 fs-7 fw-semibold">Free shipping when you spend EGP 200 and above on express items</p>
+        </div>
+      </div>
+      <div class="col-12 d-flex align-items-center py-4">
+        <img style="width: 35px; height: 35px;" src="assets/others/secure_usp.svg" alt="">
+        <div class="ms-3">
+          <p class="my-0 fs-8 fw-bold">SECURE SHOPPING</p>
+          <p class="my-0 fs-7 fw-semibold">Your data is always protected</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
