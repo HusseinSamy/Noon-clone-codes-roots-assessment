@@ -24,12 +24,6 @@
   color: white;
 }
 
-.product-image {
-  width: 78px;
-  border: 2px solid rgba(128,128,128,0.2);
-  border-radius: 0.5em;
-}
-
 .carousel-container{
   width: max-content;
 }
