@@ -13,20 +13,40 @@ export class ProductsSliderComponent implements OnInit {
   @Input() title:string = 'How about these?';
   responsiveOptions = [
     {
-        breakpoint: '1024px',
-        numVisible: 5,
+        breakpoint: '1440px',
+        numVisible: 7,
         numScroll: 5
     },
     {
-        breakpoint: '768px',
-        numVisible: 4,
+        breakpoint: '1252px',
+        numVisible: 6,
         numScroll: 4
     },
     {
-        breakpoint: '560px',
-        numVisible: 3,
+        breakpoint: '1064px',
+        numVisible: 5,
         numScroll: 3
-    }
+    },
+    {
+        breakpoint: '876px',
+        numVisible: 4,
+        numScroll: 2
+    },
+    {
+        breakpoint: '688px',
+        numVisible: 3,
+        numScroll: 2
+    },
+    {
+        breakpoint: '500px',
+        numVisible: 2,
+        numScroll: 2
+    },
+    {
+        breakpoint: '312px',
+        numVisible: 1,
+        numScroll: 2
+    },
   ]
 
   products: IProduct[] = [
