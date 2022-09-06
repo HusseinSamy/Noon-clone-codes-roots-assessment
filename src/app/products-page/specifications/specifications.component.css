@@ -3,8 +3,19 @@
   transition-duration: 500ms;
 }
 
+.title{
+  cursor: pointer;
+}
+
 .active{
   border-bottom: #3866DF solid 3px;
+}
+.active p {
+  color: #3866DF;
+}
+.active p:hover {
+  color: #3866DF;
+  transition-duration: 0ms;
 }
 
 .text-grey{
