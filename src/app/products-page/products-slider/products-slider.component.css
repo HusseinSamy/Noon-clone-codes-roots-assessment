@@ -1,0 +1,16 @@
+.product-image {
+  width: 188px;
+  }
+
+.carousel-container{
+  width: max-content;
+}
+
+.viewport{
+  width: 188px;
+}
+
+:host ::ng-deep .p-carousel-indicators{
+  padding: 0px 0px 0px 24px;
+}
+
