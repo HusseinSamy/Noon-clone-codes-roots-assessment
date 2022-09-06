@@ -1,18 +1,31 @@
-<!---------------------------- COLUMN 2 --------------------------->
+<!---------------------------- COLUMN 1 --------------------------->
 
-<div class="container px-3 d-flex flex-sm-column justify-content-sm-center align-items-sm-center justify-content-lg-start align-items-lg-start    ">
+<div class="container px-3 d-flex flex-column justify-content-center align-items-center justify-content-xl-start align-items-xl-start    ">
   <div class="row py-3">
     <span class="p-0 fs-7 fw-normal"> Fashion > Bags & Luggage > Backpacks > Casual Backpacks </span>
   </div>
-  <div class="row justify-content-xxl-start justify-content-sm-center">
+  <div class="row justify-content-xxl-start justify-content-center">
     <div class="col-1 align-self-start carousel-container">
-      <p-carousel styleClass="custom-carousel" [style]="{'align-items':'center'}" [value]="bags" [numVisible]="4" verticalViewPortHeight="480px" [numScroll]="1" orientation="vertical" [showIndicators]="false">
+      <p-carousel [class]="'d-none d-sm-flex'" [style]="{'align-items':'center'}" [value]="bags" [numVisible]="4" verticalViewPortHeight="480px" [numScroll]="1" orientation="vertical" [showIndicators]="false">
         <ng-template let-bag pTemplate="item">
-          <img (click)="onClick($event)" class="product-image" src="{{bag.image}}">
+          <img style=" width: 78px; border: 2px solid rgba(128,128,128,0.2);border-radius: 0.5em;" (click)="onClick($event)" class="product-image" src="{{bag.image}}">
         </ng-template>
       </p-carousel>
     </div>
-    <div class="col-xxl-3 col-sm-4 overflow-hidden magnifier-container">
+
+    <p-carousel [class]="'d-flex d-sm-none align-items-center justify-content-center'" [style]="{'max-width': '250px','min-width': '150px'}" [indicatorStyle]="{'width': '8px','height':'8px', 'border-radius':'25px'}" [value]="bags" [autoplayInterval]="20000" [numVisible]="1" [numScroll]="1" [showNavigators]="false" [circular]="false">
+      <ng-template let-bag pTemplate="item">
+        <div class="product-item">
+          <div class="product-item-content">
+            <div style="max-width: 250px; min-width: 150px" class="mb-3">
+              <img style="max-width: 250px;" src="{{bag.image}}" class="product-image" />
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+
+    <div class="d-none d-sm-flex col-xxl-3 overflow-hidden magnifier-container">
       <ng-img-magnifier class="photo-container" [thumbImage]="image" [fullImage]="image"
     [top]="'6'" [right]="'40.5'"
     [resultWidth]="'20'" [resultHeight]="'50'"
@@ -22,7 +35,7 @@
 
 <!---------------------------- COLUMN 2 --------------------------->
 
-<div class="mx-5 col-sm-6 col-xxl-4 align-self-start">
+<div class="d-flex flex-column mx-lg-5 mx-1 col-12 col-lg-5 col-xxl-4 align-items-start">
       <p class="fs-6 m-0 p-0 fw-normal">FORCE</p>
       <p class="fs-4 p-0 fw-semibold">Logo Printed Backpack Red</p>
       <div class="row d-flex align-items-center">
@@ -95,7 +108,7 @@
               <li><a class="dropdown-item" href="#" (click)="quntityChanged($event)">10</a></li>
             </ul>
           </div>
-          <button type="button" class="col-10 btn btn-cart fw-bold">Add to cart</button>
+          <button type="button" class="ms-2 col-10 btn btn-cart fw-bold">Add to cart</button>
         </div>
 
       </div>
