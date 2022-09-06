@@ -6,11 +6,11 @@
       <div style="background-color:#f4f7fe;" class="product-item ps-0 container">
         <div style="height: 444px; background-color: white;" class="product-item-content">
 
-          <p-carousel [indicatorStyle]="{'width': '8px','height':'8px', 'border-radius':'25px'}" [value]="product.images" [autoplayInterval]="20000" [numVisible]="1" [numScroll]="1" [showNavigators]="false" [circular]="false" [style]="{'width': '176px'}">
+          <p-carousel [indicatorStyle]="{'width': '8px','height':'8px', 'border-radius':'25px'}" [value]="product.images" [autoplayInterval]="20000" [numVisible]="1" [numScroll]="1" [showNavigators]="false" [circular]="false" [style]="{'max-width': '176px','min-width': '100px'}">
             <ng-template let-image pTemplate="item">
               <div class="product-item">
                 <div class="product-item-content">
-                  <div style="width: 176px" class="mb-3">
+                  <div style="max-width: 176px; min-width: 100px" class="mb-3">
                     <img src="{{image}}" class="product-image" />
                   </div>
                 </div>
