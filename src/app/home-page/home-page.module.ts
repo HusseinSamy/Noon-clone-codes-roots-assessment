@@ -1,6 +1,5 @@
-import { SwiperModule } from 'swiper/angular';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from 'primeng/api';
+import { SharedModule } from 'src/_shared/modules/shared.module';
 
 import { NgModule } from "@angular/core";
 import { MainCarouselComponent } from './main-carousel/main-carousel.component';
@@ -18,7 +17,6 @@ import { HomePageComponent } from './home-page.component';
     HomePageComponent
   ],
   imports: [
-    SwiperModule,
     CommonModule,
     SharedModule
   ],
