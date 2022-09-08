@@ -13,9 +13,9 @@ import { ProductsPageModule } from './products-page/products-page.module';
     imports: [
       HomePageModule,
       BrowserModule,
-      AppRoutingModule,
       HttpClientModule,
-      ProductsPageModule
+      ProductsPageModule,
+      AppRoutingModule
       ],
     providers: [],
     bootstrap: [AppComponent],
