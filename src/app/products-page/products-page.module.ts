@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
-
+import { ProductsRoutingModule } from './products-page-routing.module';
 
 import { ImgMagnifier } from "ng-img-magnifier";
 import { ProductsPageComponent } from './products-page.component';
@@ -23,7 +23,8 @@ import { ShortenPipe } from 'src/_shared/pipes/shorten.pipe';
   imports: [
     CommonModule,
     ImgMagnifier,
-    CarouselModule
+    CarouselModule,
+    ProductsRoutingModule
   ],
   exports: [ProductsPageComponent, ShortenPipe]
 })
